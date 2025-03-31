@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  About
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <div class="card shadow">
+        <div class="card-body p-4 p-lg-5">
+          <h1 class="display-5 mb-4">About Django Project</h1>
+
+          <p class="lead mb-4">A comprehensive Django template providing a solid foundation for web applications with built-in user authentication and profiles.</p>
+
+          <h2 class="h4 mt-5 mb-3">Project Overview</h2>
+          <p>This Django project template was created to help developers quickly bootstrap new web applications with commonly needed features already implemented. It saves time by providing a ready-to-use foundation that follows Django best practices and includes essential functionality most web applications require.</p>
+          <p>The template is designed to be customizable and extensible, allowing you to build upon it to create your own unique applications while benefiting from the solid foundation it provides.</p>
+
+          <h2 class="h4 mt-5 mb-3">Key Features</h2>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="bi bi-person-check text-primary fs-3 me-3"></i>
+                </div>
+                <div>
+                  <h3 class="h5">Custom User Model</h3>
+                  <p>Email-based authentication instead of traditional usernames.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="bi bi-shield-lock text-primary fs-3 me-3"></i>
+                </div>
+                <div>
+                  <h3 class="h5">Authentication System</h3>
+                  <p>Complete login, registration, and password reset functionality.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="bi bi-person-badge text-primary fs-3 me-3"></i>
+                </div>
+                <div>
+                  <h3 class="h5">User Profiles</h3>
+                  <p>Customizable user profiles with bio and profile pictures.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="bi bi-bootstrap text-primary fs-3 me-3"></i>
+                </div>
+                <div>
+                  <h3 class="h5">Bootstrap 5 Design</h3>
+                  <p>Responsive templates using Bootstrap 5 components and styling.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="h4 mt-5 mb-3">Getting Started</h2>
+          <p>To use this template for your own project, simply clone the repository, install the dependencies, and run the migrations. You can then customize the template to suit your specific needs by modifying the models, views, and templates.</p>
+          <p>Check the README.md file for detailed setup instructions.</p>
+
+          <div class="mt-5 text-center">
+            <a href="{% url 'website:contact' %}" class="btn btn-primary btn-lg"><i class="bi bi-envelope me-2"></i>Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -88,4 +88,3 @@ db.sqlite3
 .venv/
 .vscode/
 media/
-static/

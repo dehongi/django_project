@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Privacy Policy
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <div class="card shadow">
+        <div class="card-body p-4 p-lg-5">
+          <h1 class="display-5 mb-4">Privacy Policy</h1>
+
+          <p class="lead mb-4">We are committed to protecting your privacy and personal data.</p>
+
+          <p>
+            Last updated:{% now 'F j, Y' %}
+          </p>
+
+          <h2 class="h4 mt-5 mb-3">1. Information We Collect</h2>
+          <p>We collect information to provide better services to our users. The types of information we collect include:</p>
+          <ul>
+            <li>
+              <strong>Account Information:</strong> When you register for an account, we collect your email address and name.
+            </li>
+            <li>
+              <strong>Profile Information:</strong> Information you provide in your profile, such as a bio or profile picture.
+            </li>
+            <li>
+              <strong>Content Data:</strong> The notes and other content you create and store in Notes App.
+            </li>
+            <li>
+              <strong>Usage Data:</strong> Information about how you use our service, such as when you access the service and what features you use.
+            </li>
+            <li>
+              <strong>Device Information:</strong> Information about the device you use to access our service, including hardware model, operating system, and browser type.
+            </li>
+          </ul>
+
+          <h2 class="h4 mt-5 mb-3">2. How We Use Your Information</h2>
+          <p>We use the information we collect to:</p>
+          <ul>
+            <li>Provide, maintain, and improve our services</li>
+            <li>Create and maintain your account</li>
+            <li>Process and complete transactions</li>
+            <li>Send technical notices and support messages</li>
+            <li>Respond to your comments and questions</li>
+            <li>Understand and analyze how you use our service</li>
+            <li>Monitor and analyze trends, usage, and activities in connection with our service</li>
+            <li>Detect, prevent, and address technical issues</li>
+          </ul>
+
+          <h2 class="h4 mt-5 mb-3">3. How We Share Your Information</h2>
+          <p>We do not share your personal information with companies, organizations, or individuals outside of Notes App except in the following cases:</p>
+          <ul>
+            <li>
+              <strong>With your consent:</strong> We will share personal information when you have given us your consent to do so.
+            </li>
+            <li>
+              <strong>For legal reasons:</strong> We will share personal information if we have a good-faith belief that access, use, preservation, or disclosure of the information is reasonably necessary to meet any applicable law, regulation, legal process, or enforceable governmental request.
+            </li>
+            <li>
+              <strong>To enforce our policies:</strong> We may share information to protect against harm to the rights, property, or safety of Notes App, our users, or the public as required or permitted by law.
+            </li>
+          </ul>
+
+          <h2 class="h4 mt-5 mb-3">4. Public Information</h2>
+          <p>When you make a note public, that content may be viewed by anyone, including people who don't have an account with Notes App. Please be careful about what information you choose to make public.</p>
+
+          <h2 class="h4 mt-5 mb-3">5. Data Security</h2>
+          <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized or unlawful processing, accidental loss, destruction, or damage. However, no method of transmission over the Internet or method of electronic storage is 100% secure.</p>
+
+          <h2 class="h4 mt-5 mb-3">6. Data Retention</h2>
+          <p>We retain your personal information for as long as necessary to fulfill the purposes for which we collected it, including for the purposes of satisfying any legal, accounting, or reporting requirements.</p>
+
+          <h2 class="h4 mt-5 mb-3">7. Your Rights</h2>
+          <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+          <ul>
+            <li>The right to access the personal information we hold about you</li>
+            <li>The right to request correction of inaccurate personal information</li>
+            <li>The right to request deletion of your personal information</li>
+            <li>The right to object to processing of your personal information</li>
+            <li>The right to request restriction of processing your personal information</li>
+            <li>The right to request transfer of your personal information</li>
+          </ul>
+
+          <h2 class="h4 mt-5 mb-3">8. Children's Privacy</h2>
+          <p>Our service is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13. If we learn that we have collected personal information of a child under 13, we will take steps to delete such information as soon as possible.</p>
+
+          <h2 class="h4 mt-5 mb-3">9. Changes to This Privacy Policy</h2>
+          <p>We may update our Privacy Policy from time to time. We will notify you of significant changes by posting a notice on our website or sending an email to the address associated with your account.</p>
+
+          <h2 class="h4 mt-5 mb-3">10. Contact Us</h2>
+          <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+          <p>
+            <a href="mailto:privacy@notesapp.com">privacy@notesapp.com</a>
+          </p>
+
+          <div class="mt-5 text-center">
+            <a href="{% url 'website:contact' %}" class="btn btn-primary"><i class="bi bi-envelope me-2"></i>Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Contact Us
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <div class="card shadow">
+        <div class="card-body p-4 p-lg-5">
+          <h1 class="display-5 mb-4">Contact Us</h1>
+          <p class="lead mb-4">Have questions about using this template? We're here to help!</p>
+
+          <div class="row mt-5">
+            <div class="col-md-6 mb-4 mb-md-0">
+              <div class="card h-100">
+                <div class="card-body text-center p-4">
+                  <i class="bi bi-github text-primary" style="font-size: 3rem;"></i>
+                  <h2 class="h4 mt-3">GitHub</h2>
+                  <p class="mb-0">Visit our GitHub repository to report issues, submit feature requests, or contribute to the project.</p>
+                  <div class="mt-3">
+                    <a href="https://github.com/dehongi/django_project" class="btn btn-outline-primary" target="_blank"><i class="bi bi-github me-2"></i>GitHub Repository</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card h-100">
+                <div class="card-body text-center p-4">
+                  <i class="bi bi-envelope-open text-primary" style="font-size: 3rem;"></i>
+                  <h2 class="h4 mt-3">Email</h2>
+                  <p class="mb-0">For direct inquiries, feel free to reach out via email.</p>
+                  <div class="mt-3">
+                    <a href="mailto:your-email@example.com" class="btn btn-outline-primary"><i class="bi bi-envelope me-2"></i>Send Email</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <div class="card border-0 bg-light">
+              <div class="card-body p-4">
+                <h2 class="h4 mb-3">Customize This Template</h2>
+                <p>This is a placeholder contact page. When you use this template for your own project, you can:</p>
+                <ul>
+                  <li>Replace this with your own contact form</li>
+                  <li>Add your real contact information</li>
+                  <li>Integrate with a third-party form service</li>
+                  <li>Link to your social media accounts</li>
+                </ul>
+                <p class="mb-0">See the documentation for more information on customizing this template.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

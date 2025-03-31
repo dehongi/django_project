@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Welcome to Django Project
+{% endblock %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h1 class="display-4 mb-3">Django Project Template</h1>
+          <p class="lead mb-4">A solid foundation for your web application with custom user authentication.</p>
+
+          {% if user.is_authenticated %}
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
+              <a href="{% url 'accounts:profile' %}" class="btn btn-primary btn-lg px-4 me-sm-2"><i class="bi bi-person me-2"></i>My Profile</a>
+            </div>
+          {% else %}
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
+              <a href="{% url 'accounts:signup' %}" class="btn btn-success btn-lg px-4 me-sm-2"><i class="bi bi-person-plus me-2"></i>Sign Up</a>
+              <a href="{% url 'accounts:login' %}" class="btn btn-outline-primary btn-lg px-4"><i class="bi bi-box-arrow-in-right me-2"></i>Log In</a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="container py-5">
+    <h2 class="h3 mb-4 text-center">Project Features</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-hover">
+          <div class="card-body text-center p-4">
+            <i class="bi bi-shield-lock text-primary" style="font-size: 2rem;"></i>
+            <h3 class="h4 mt-3">Email Authentication</h3>
+            <p class="card-text">Secure email-based authentication system instead of traditional usernames.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-hover">
+          <div class="card-body text-center p-4">
+            <i class="bi bi-person-badge text-primary" style="font-size: 2rem;"></i>
+            <h3 class="h4 mt-3">User Profiles</h3>
+            <p class="card-text">Customizable user profiles with essential information and profile pictures.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-hover">
+          <div class="card-body text-center p-4">
+            <i class="bi bi-bootstrap text-primary" style="font-size: 2rem;"></i>
+            <h3 class="h4 mt-3">Bootstrap 5</h3>
+            <p class="card-text">Modern responsive design using Bootstrap 5 components and icons.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if not user.is_authenticated %}
+    <!-- Call to Action Section -->
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="card bg-primary text-white border-0 shadow">
+            <div class="card-body p-4 p-lg-5 text-center">
+              <h2 class="mb-4">Ready to get started?</h2>
+              <p class="lead mb-4">Create your account today and start building your application!</p>
+              <a href="{% url 'accounts:signup' %}" class="btn btn-light btn-lg px-4"><i class="bi bi-person-plus me-2"></i>Sign Up Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- About Project Section -->
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="h3 mb-4 text-center">About This Template</h2>
+        <div class="card">
+          <div class="card-body">
+            <p>This Django project template provides a solid foundation for building web applications with the following features:</p>
+            <ul>
+              <li>Custom user model with email-based authentication</li>
+              <li>User registration and authentication system</li>
+              <li>Password reset functionality</li>
+              <li>User profiles with customizable fields</li>
+              <li>Basic website structure with standard pages</li>
+              <li>Bootstrap-ready responsive templates</li>
+            </ul>
+            <p>Use this template as a starting point for your Django projects to save time on common setup tasks.</p>
+            <div class="text-center mt-4">
+              <a href="{% url 'website:about' %}" class="btn btn-outline-primary"><i class="bi bi-info-circle me-2"></i>Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

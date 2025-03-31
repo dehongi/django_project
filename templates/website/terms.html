@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Terms of Service
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <div class="card shadow">
+        <div class="card-body p-4 p-lg-5">
+          <h1 class="display-5 mb-4">Terms of Service</h1>
+
+          <p class="lead mb-4">Please read these terms carefully before using Notes App.</p>
+
+          <p>
+            Last updated:{% now 'F j, Y' %}
+          </p>
+
+          <h2 class="h4 mt-5 mb-3">1. Acceptance of Terms</h2>
+          <p>By accessing or using Notes App, you agree to be bound by these Terms of Service. If you do not agree to these terms, you may not access or use our services.</p>
+
+          <h2 class="h4 mt-5 mb-3">2. Description of Service</h2>
+          <p>Notes App provides a platform for creating, storing, and managing digital notes. We reserve the right to modify, suspend, or discontinue the service at any time without notice.</p>
+
+          <h2 class="h4 mt-5 mb-3">3. User Accounts</h2>
+          <p>To use certain features of Notes App, you must register for an account. You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.</p>
+          <p>We reserve the right to terminate accounts that violate these terms or for any other reason at our sole discretion.</p>
+
+          <h2 class="h4 mt-5 mb-3">4. User Content</h2>
+          <p>You retain all rights to the content you create and store on Notes App. By making content public, you grant us a worldwide, non-exclusive license to host and display that content.</p>
+          <p>You agree not to use Notes App to store or share:</p>
+          <ul>
+            <li>Content that infringes on intellectual property rights</li>
+            <li>Content that violates any laws or regulations</li>
+            <li>Malicious software or harmful code</li>
+            <li>Content that is defamatory, obscene, or harassing</li>
+          </ul>
+
+          <h2 class="h4 mt-5 mb-3">5. Privacy</h2>
+          <p>
+            Your privacy is important to us. Please review our <a href="{% url 'website:privacy' %}">Privacy Policy</a>
+            to understand how we collect, use, and disclose information about you.
+          </p>
+
+          <h2 class="h4 mt-5 mb-3">6. Limitation of Liability</h2>
+          <p>Notes App is provided "as is" without warranties of any kind. We are not responsible for any damages that may arise from your use of our service.</p>
+          <p>We do not guarantee that:</p>
+          <ul>
+            <li>The service will be uninterrupted or error-free</li>
+            <li>Defects will be corrected</li>
+            <li>The service or servers are free of viruses or other harmful components</li>
+          </ul>
+
+          <h2 class="h4 mt-5 mb-3">7. Changes to Terms</h2>
+          <p>We may update these terms from time to time. We will notify users of significant changes by posting a notice on our website or sending an email to the address associated with your account.</p>
+
+          <h2 class="h4 mt-5 mb-3">8. Governing Law</h2>
+          <p>These terms are governed by and construed in accordance with the laws of the jurisdiction in which our company is registered, without regard to its conflict of law principles.</p>
+
+          <h2 class="h4 mt-5 mb-3">9. Contact Information</h2>
+          <p>If you have any questions about these Terms of Service, please contact us at:</p>
+          <p>
+            <a href="mailto:legal@notesapp.com">legal@notesapp.com</a>
+          </p>
+
+          <div class="mt-5 text-center">
+            <a href="{% url 'website:contact' %}" class="btn btn-primary"><i class="bi bi-envelope me-2"></i>Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

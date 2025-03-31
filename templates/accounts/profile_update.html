@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Edit Profile
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-8 col-lg-6 mx-auto">
+      <div class="card shadow">
+        <div class="card-header bg-primary bg-opacity-10">
+          <h1 class="h3 mb-0"><i class="bi bi-pencil-square me-2"></i>Edit Profile</h1>
+        </div>
+        <div class="card-body">
+          <form method="post" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+              <div class="alert alert-danger">
+                {% for error in form.non_field_errors %}
+                  {{ error }}
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            <div class="row mb-3">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <label for="{{ form.first_name.id_for_label }}" class="form-label">First Name</label>
+                {{ form.first_name }}
+                {% if form.first_name.errors %}
+                  <div class="text-danger mt-1">
+                    {% for error in form.first_name.errors %}
+                      <small>{{ error }}</small>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+              <div class="col-md-6">
+                <label for="{{ form.last_name.id_for_label }}" class="form-label">Last Name</label>
+                {{ form.last_name }}
+                {% if form.last_name.errors %}
+                  <div class="text-danger mt-1">
+                    {% for error in form.last_name.errors %}
+                      <small>{{ error }}</small>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="{{ form.bio.id_for_label }}" class="form-label">Bio</label>
+              {{ form.bio }}
+              {% if form.bio.errors %}
+                <div class="text-danger mt-1">
+                  {% for error in form.bio.errors %}
+                    <small>{{ error }}</small>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <div class="form-text">Tell us a little about yourself.</div>
+            </div>
+
+            <div class="mb-4">
+              <label for="{{ form.profile_picture.id_for_label }}" class="form-label">Profile Picture</label>
+              {% if user.profile_picture %}
+                <div class="mb-2">
+                  <img src="{{ user.profile_picture.url }}" alt="Current profile picture" class="img-thumbnail" style="max-height: 100px;" />
+                </div>
+              {% endif %}
+              {{ form.profile_picture }}
+              {% if form.profile_picture.errors %}
+                <div class="text-danger mt-1">
+                  {% for error in form.profile_picture.errors %}
+                    <small>{{ error }}</small>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <a href="{% url 'accounts:profile' %}" class="btn btn-outline-secondary"><i class="bi bi-x-circle me-1"></i>Cancel</a>
+              <button type="submit" class="btn btn-primary"><i class="bi bi-save me-1"></i>Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block extra_js %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const imgInput = document.getElementById('id_profile_picture')
+      const previewContainer = document.createElement('div')
+      previewContainer.classList.add('mt-3')
+    
+      if (imgInput) {
+        imgInput.parentNode.insertBefore(previewContainer, imgInput.nextSibling)
+    
+        imgInput.addEventListener('change', function () {
+          previewContainer.innerHTML = ''
+          if (this.files && this.files[0]) {
+            const img = document.createElement('img')
+            img.classList.add('rounded-circle', 'border')
+            img.style.width = '150px'
+            img.style.height = '150px'
+            img.style.objectFit = 'cover'
+    
+            const reader = new FileReader()
+            reader.onload = function (e) {
+              img.src = e.target.result
+              previewContainer.appendChild(img)
+              const caption = document.createElement('p')
+              caption.classList.add('text-muted', 'small', 'mt-2')
+              caption.textContent = 'Preview (will be cropped to square)'
+              previewContainer.appendChild(caption)
+            }
+            reader.readAsDataURL(this.files[0])
+          }
+        })
+      }
+    })
+  </script>
+{% endblock %}

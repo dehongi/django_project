@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ profile_user.get_full_name }}'s Profile
+{% endblock %}
+
+{% block content %}
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="card shadow">
+          <div class="card-body text-center p-4">
+            <div class="mb-4">
+              {% if profile_user.profile_picture %}
+                <img src="{{ profile_user.profile_picture.url }}" alt="{{ profile_user.get_full_name }}" class="rounded-circle img-fluid" style="width: 150px; height: 150px; object-fit: cover;" />
+              {% else %}
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto" style="width: 150px; height: 150px; font-size: 3rem;">{{ profile_user.first_name|slice:':1'|upper }}</div>
+              {% endif %}
+            </div>
+
+            <h2 class="h3 mb-3">{{ profile_user.get_full_name }}</h2>
+
+            {% if profile_user.bio %}
+              <div class="mb-4 px-lg-5">
+                <p>{{ profile_user.bio }}</p>
+              </div>
+            {% endif %}
+
+            <div class="mb-4">
+              <span class="badge bg-secondary">Member since {{ profile_user.date_joined|date:'F Y' }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mt-4">
+          <div class="card-header bg-light">
+            <h3 class="h5 mb-0">Contact Information</h3>
+          </div>
+          <div class="card-body">
+            <p class="mb-0">
+              <strong>Email:</strong> {{ profile_user.email }}
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-4 text-center">
+          <a href="{{ request.META.HTTP_REFERER|default:'/' }}" class="btn btn-outline-primary"><i class="bi bi-arrow-left me-2"></i>Go Back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
